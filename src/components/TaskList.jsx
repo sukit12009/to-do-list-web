@@ -22,7 +22,7 @@ export default function TaskList() {
   };
 
   const handleToggle = async (task) => {
-    await updateTask(task.ID, { ...task, completed: !task.completed });
+    await updateTask(task.id, { ...task, completed: !task.completed });
     fetchTasks();
   };
 
@@ -67,7 +67,7 @@ export default function TaskList() {
         <ul className="space-y-3">
           {tasks.map((task) => (
             <li
-              key={task.ID}
+              key={task.id}
               className={`flex items-center justify-between p-4 rounded-lg transition-all duration-200 ${
                 task.completed
                   ? "bg-green-900/30 border border-green-800/50"
@@ -98,7 +98,7 @@ export default function TaskList() {
                   <FaCheck />
                 </button>
                 <button
-                  onClick={() => handleDelete(task.ID)}
+                  onClick={() => handleDelete(task.id)}
                   className="p-2 rounded-full text-red-500 hover:bg-red-900/30 hover:text-red-400 transition-colors"
                   aria-label="Delete task"
                 >
